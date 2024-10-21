@@ -1,0 +1,27 @@
+header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px;
+  align-items: center;
+  background-color: #212529;
+}
+
+header h2 {
+  margin-right: auto;
+  color: #f8f9fa;
+}
+
+header a {
+  font-size: 20px;
+  color: #dee2e6;
+}
+
+.israel_time {
+  font-size: 20px;
+  margin-left: 80px;
+}
+
+.active {
+  color: #f8f9fa;
+}
