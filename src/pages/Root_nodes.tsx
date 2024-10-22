@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/nodes.css";
@@ -35,15 +37,22 @@ export const Root_nodes = () => {
   }, []);
 
   return (
-    <div className="grid-cards-container">
-      {nodes.map((node) => (
-        <Link to={`/${node.node_id}`} key={node.node_id}>
-          <div className="single_card">
-            <h2>{node.title}</h2>
-            <h2>{node.status}</h2>
-          </div>
-        </Link>
-      ))}
+    <div>
+      <div className="grid-cards-container">
+        {nodes.map((node) => (
+          <Link to={`/${node.node_id}`} key={node.node_id}>
+            <div className="single_card">
+              <h2>{node.title}</h2>
+              <h2>{node.status}</h2>
+            </div>
+          </Link>
+        ))}
+      </div>
+      <ButtonGroup variant="contained" aria-label="Basic button group" sx={{ position: "fixed", bottom: "10px", right: "10px", margin: "10px"}}>
+        <Button disabled>rules</Button>
+        <Button>nodes</Button>
+        <Button disabled>reports</Button>
+      </ButtonGroup>
     </div>
   );
 };
