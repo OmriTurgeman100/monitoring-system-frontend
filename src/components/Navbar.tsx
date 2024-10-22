@@ -35,7 +35,7 @@ export const Navbar = () => {
         <h2> threads </h2>
         <h2 className="israel_time">
           {loading ? <CircularProgress size={22} /> : time}
-        </h2>{" "}
+        </h2>
         <NavLink to="/">עמוד ראשי</NavLink>
         <NavLink to="/about">אודות המערכת</NavLink>
       </header>
