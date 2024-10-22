@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/root_nodes.css";
+import "../styles/nodes.css";
 
 type root_nodes = {
   description: string;
@@ -12,8 +12,6 @@ type root_nodes = {
   time: string;
   title: string;
 };
-
-
 
 export const Root_nodes = () => {
   const [nodes, setNodes] = useState<root_nodes[]>([]);

@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { PostNodeReport } from "../components/PostNodeReport";
+import "../styles/report.css";
 
 type sub_nodes = {
   description: string;
@@ -31,32 +33,23 @@ type data = {
 export const Specified_node = () => {
   const { id } = useParams();
   const [nodesData, setNodesData] = useState<data | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
 
   const get_data = async () => {
-    setLoading(true); // Set loading state to true before fetching
     try {
       const response = await fetch(`http://127.0.0.1/api/v1/nodes/${id}`);
       const data: data = await response.json();
-      setNodesData(data); // Always set nodesData to the fetched data
+      setNodesData(data);
     } catch (error) {
-      console.error('Error fetching data', error);
-    } finally {
-      setLoading(false); // Set loading to false after fetch is complete
+      console.error("Error fetching data", error);
     }
   };
 
   useEffect(() => {
-    get_data(); // Fetch data when component mounts and when id changes
+    get_data();
   }, [id]);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div>
-      {/* Display nodes if available */}
       {nodesData?.nodes && nodesData.nodes.length > 0 && (
         <div className="grid-cards-container">
           {nodesData.nodes.map((node) => (
@@ -70,21 +63,19 @@ export const Specified_node = () => {
         </div>
       )}
 
-      {/* Display reports if available */}
       {nodesData?.reports && nodesData.reports.length > 0 && (
         <div className="grid-cards-container">
           {nodesData.reports.map((report) => (
-            <div key={report.id} className="single_card">
+            <div key={report.id} className="single_card_report">
               <h2>{report.title}</h2>
-              <h2>{report.value}</h2>
+              <p>{report.value}</p>
             </div>
           ))}
         </div>
       )}
 
-  
       {nodesData?.nodes?.length === 0 && nodesData?.reports?.length === 0 && (
-        <div></div>
+        <PostNodeReport />
       )}
     </div>
   );

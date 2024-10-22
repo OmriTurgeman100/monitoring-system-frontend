@@ -1,0 +1,25 @@
+.single_card_report {
+  background-color: #ffb2eb;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform 1s;
+}
+
+.single_card_report h2 {
+  margin-bottom: 10px;
+  color: #212529;
+}
+
+.single_card_report p {
+  font-size: 20px;
+  color: #212529;
+  position: relative;
+  left: 160px;
+  top: 15px;
+  font-weight: bold;
+}
+
+.single_card_report:hover {
+  transform: scale(1.05);
+}
