@@ -87,7 +87,7 @@ export const Specified_node = () => {
         <ButtonGroup variant="contained" aria-label="Basic button group" sx={{ position: "fixed", bottom: "10px", right: "10px", margin: "10px"}}>
             <Button>rules</Button>
             <Button disabled>nodes</Button>
-            <Button >reports</Button>
+            <Button disabled>reports</Button>
         </ButtonGroup>
 
         </div>
