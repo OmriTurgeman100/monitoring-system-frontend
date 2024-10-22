@@ -45,6 +45,7 @@ export const Specified_node = () => {
   };
 
   useEffect(() => {
+    console.log(typeof id);
     get_data();
   }, [id]);
 
@@ -75,7 +76,7 @@ export const Specified_node = () => {
       )}
 
       {nodesData?.nodes?.length === 0 && nodesData?.reports?.length === 0 && (
-        <PostNodeReport />
+        <PostNodeReport id={id} />
       )}
     </div>
   );
