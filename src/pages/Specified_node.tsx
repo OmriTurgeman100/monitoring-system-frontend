@@ -23,7 +23,7 @@ type reports = {
   report_id: string;
   time: string;
   title: string;
-  value: number;
+  value: number | null;
 };
 
 type data = {
@@ -46,6 +46,8 @@ export const Specified_node = () => {
     }
   };
 
+
+  // * todo use context api to always fetch the node, without viewing a specific route.
   const handle_nodes_post = async () => {
     navigate(`/post/node/${id}`);
   };
