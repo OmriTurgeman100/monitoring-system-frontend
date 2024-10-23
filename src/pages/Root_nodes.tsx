@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -16,6 +17,7 @@ type root_nodes = {
 };
 
 export const Root_nodes = () => {
+  const navigate = useNavigate();
   const [nodes, setNodes] = useState<root_nodes[]>([]);
 
   const get_root_nodes = async () => {
@@ -28,6 +30,10 @@ export const Root_nodes = () => {
     if (response.ok) {
       setNodes(data);
     }
+  };
+
+  const handle_nodes_post = async () => {
+    navigate(`/post/root`);
   };
 
   useEffect(() => {
@@ -59,7 +65,7 @@ export const Root_nodes = () => {
         }}
       >
         <Button disabled>rules</Button>
-        <Button>nodes</Button>
+        <Button onClick={handle_nodes_post}>nodes</Button>
         <Button disabled>reports</Button>
       </ButtonGroup>
     </div>
