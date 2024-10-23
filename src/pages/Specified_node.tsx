@@ -50,6 +50,10 @@ export const Specified_node = () => {
     navigate(`/post/node/${id}`);
   };
 
+  const handle_report_post = async () => {
+    navigate(`/post/report/${id}`);
+  };
+
   useEffect(() => {
     get_data();
   }, [id]);
@@ -125,7 +129,7 @@ export const Specified_node = () => {
         >
           <Button disabled>rules</Button>
           <Button onClick={handle_nodes_post}>nodes</Button>
-          <Button>reports</Button>
+          <Button onClick={handle_report_post}>reports</Button>
         </ButtonGroup>
       )}
     </div>

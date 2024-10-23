@@ -9,6 +9,7 @@ import { About } from "./pages/About";
 import { Specified_node } from "./pages/Specified_node";
 import { PostNode } from "./components/PostNode";
 import { Root_nodes } from "./pages/Root_nodes";
+import { PostReport } from "./components/PostReport";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="about" element={<About />}></Route>
       <Route path="post/node/:id" element={<PostNode />}></Route>
       <Route path="post/root" element={<PostNode />}></Route>
+      <Route path="post/report/:id" element={<PostReport />}></Route>
     </Route>
   )
 );
