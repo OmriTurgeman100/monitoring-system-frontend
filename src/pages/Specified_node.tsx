@@ -1,10 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import { NodeReport } from "../components/NodeReport";
 import "../styles/report.css";
 
 type sub_nodes = {
@@ -33,6 +32,7 @@ type data = {
 };
 
 export const Specified_node = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [nodesData, setNodesData] = useState<data | null>(null);
 
@@ -46,8 +46,11 @@ export const Specified_node = () => {
     }
   };
 
+  const handle_nodes_post = async () => {
+    navigate(`/post/node/${id}`);
+  };
+
   useEffect(() => {
-    console.log(typeof id);
     get_data();
   }, [id]);
 
@@ -66,34 +69,64 @@ export const Specified_node = () => {
             ))}
           </div>
 
-          <ButtonGroup variant="contained" aria-label="Basic button group" sx={{ position: "fixed", bottom: "10px", right: "10px", margin: "10px"}}>
+          <ButtonGroup
+            variant="contained"
+            aria-label="Basic button group"
+            sx={{
+              position: "fixed",
+              bottom: "10px",
+              right: "10px",
+              margin: "10px",
+            }}
+          >
             <Button>rules</Button>
-            <Button>nodes</Button>
+            <Button onClick={handle_nodes_post}>nodes</Button>
             <Button disabled>reports</Button>
-        </ButtonGroup>
+          </ButtonGroup>
         </div>
       )}
 
       {nodesData?.reports && nodesData.reports.length > 0 && (
         <div>
-        <div className="grid-cards-container">
-          {nodesData.reports.map((report) => (
-            <div key={report.id} className="single_card_report">
-              <h2>{report.title}</h2>
-              <p>{report.value}</p>
-            </div>
-          ))}
-        </div>
-        <ButtonGroup variant="contained" aria-label="Basic button group" sx={{ position: "fixed", bottom: "10px", right: "10px", margin: "10px"}}>
+          <div className="grid-cards-container">
+            {nodesData.reports.map((report) => (
+              <div key={report.id} className="single_card_report">
+                <h2>{report.title}</h2>
+                <p>{report.value}</p>
+              </div>
+            ))}
+          </div>
+          <ButtonGroup
+            variant="contained"
+            aria-label="Basic button group"
+            sx={{
+              position: "fixed",
+              bottom: "10px",
+              right: "10px",
+              margin: "10px",
+            }}
+          >
             <Button>rules</Button>
             <Button disabled>nodes</Button>
             <Button disabled>reports</Button>
-        </ButtonGroup>
-
+          </ButtonGroup>
         </div>
       )}
       {nodesData?.nodes?.length === 0 && nodesData?.reports?.length === 0 && (
-        <NodeReport id={id} />
+        <ButtonGroup
+          variant="contained"
+          aria-label="Basic button group"
+          sx={{
+            position: "fixed",
+            bottom: "10px",
+            right: "10px",
+            margin: "10px",
+          }}
+        >
+          <Button disabled>rules</Button>
+          <Button onClick={handle_nodes_post}>nodes</Button>
+          <Button>reports</Button>
+        </ButtonGroup>
       )}
     </div>
   );
