@@ -17,6 +17,7 @@ const router = createBrowserRouter(
       <Route path=":id" element={<Specified_node />}></Route>
       <Route path="about" element={<About />}></Route>
       <Route path="post/node/:id" element={<PostNode />}></Route>
+      <Route path="post/root" element={<PostNode />}></Route>
     </Route>
   )
 );

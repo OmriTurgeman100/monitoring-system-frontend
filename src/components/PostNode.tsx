@@ -25,10 +25,12 @@ export const PostNode = () => {
         }),
       });
 
-      if (response.ok) {
+      if (response.ok && id) {
         navigate(`/${id}`);
+      } else if (response.ok && !id) {
+        navigate(`/`);
       } else {
-        console.error("Failed to submit the node");
+        console.log("else block");
       }
     } catch (error) {
       console.log("test");

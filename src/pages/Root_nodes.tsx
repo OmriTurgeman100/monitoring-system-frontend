@@ -48,7 +48,16 @@ export const Root_nodes = () => {
           </Link>
         ))}
       </div>
-      <ButtonGroup variant="contained" aria-label="Basic button group" sx={{ position: "fixed", bottom: "10px", right: "10px", margin: "10px"}}>
+      <ButtonGroup
+        variant="contained"
+        aria-label="Basic button group"
+        sx={{
+          position: "fixed",
+          bottom: "10px",
+          right: "10px",
+          margin: "10px",
+        }}
+      >
         <Button disabled>rules</Button>
         <Button>nodes</Button>
         <Button disabled>reports</Button>
