@@ -31,7 +31,7 @@ export const PostNode = () => {
         console.error("Failed to submit the node");
       }
     } catch (error) {
-      console.log("error");
+      console.log("test");
     }
   };
 
