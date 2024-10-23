@@ -33,6 +33,10 @@ export const PostReport = () => {
     fetch_reports();
   }, []);
 
+  const post_report = async (report_id: string) => {
+    console.log(report_id);
+    console.log(id);
+  };
   const filteredReports = reports.filter((report) =>
     report.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
@@ -47,11 +51,11 @@ export const PostReport = () => {
         className="search_input"
       />
 
-      {/* Render filtered reports */}
       {filteredReports.length > 0 ? (
         filteredReports.map((report) => (
           <div key={report.report_id} className="report">
             <Button
+              onClick={() => post_report(report.report_id)}
               variant="contained"
               size="small"
               sx={{
@@ -66,7 +70,7 @@ export const PostReport = () => {
           </div>
         ))
       ) : (
-        <p>No reports found</p>
+        <p></p>
       )}
     </div>
   );
