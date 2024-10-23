@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Button from "@mui/material/Button";
 import "../styles/post_report.css";
 
@@ -33,9 +35,39 @@ export const PostReport = () => {
     fetch_reports();
   }, []);
 
-  const post_report = async (report_id: string) => {
+  const post_report = async (
+    report_id: string,
+    report_title: string,
+    report_description: string
+  ) => {
     console.log(report_id);
     console.log(id);
+
+    const response = await fetch("http://localhost/api/v1/post/reports", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        report_id: report_id,
+        title: report_title,
+        description: report_description,
+        parent: id,
+      }),
+    });
+
+    const data = await response.json();
+
+    let message: string = data.message;
+
+    if (response.ok) {
+      navigate(-1);
+    } else {
+      console.log(message)
+      toast.error('הריפורט הנ"ל כבר משויך לקוביה');
+
+      console.log("response is bad", response);
+    }
   };
   const filteredReports = reports.filter((report) =>
     report.title.toLowerCase().includes(searchQuery.toLowerCase())
@@ -55,7 +87,9 @@ export const PostReport = () => {
         filteredReports.map((report) => (
           <div key={report.report_id} className="report">
             <Button
-              onClick={() => post_report(report.report_id)}
+              onClick={() =>
+                post_report(report.report_id, report.title, report.description)
+              }
               variant="contained"
               size="small"
               sx={{
@@ -67,6 +101,18 @@ export const PostReport = () => {
               <AddOutlinedIcon sx={{ fontSize: "16px" }} />{" "}
             </Button>
             <h3>{report.title}</h3>
+            <ToastContainer
+              position="bottom-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+            />
           </div>
         ))
       ) : (
