@@ -25,8 +25,6 @@ export const Root_nodes = () => {
 
     const data = await response.json();
 
-    console.log("test");
-
     if (response.ok) {
       setNodes(data);
     }
@@ -58,8 +56,8 @@ export const Root_nodes = () => {
                   : "single_card_expired"
               }`}
             >
-              <h2>{node.title}</h2>
-              <h2>{node.status}</h2>
+              <h2 className="card">{node.title}</h2>
+              <h2 className="card">{node.status}</h2>
             </div>
           </Link>
         ))}

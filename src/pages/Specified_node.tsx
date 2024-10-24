@@ -63,8 +63,6 @@ export const Specified_node = () => {
 
   const handle_report_rules = async (report_id: string) => {
     navigate(`/report/rules/${report_id}`);
-
-    
   };
 
   useEffect(() => {
@@ -89,8 +87,8 @@ export const Specified_node = () => {
                       : "single_card_expired"
                   }`}
                 >
-                  <h2>{node.title}</h2>
-                  <h2>{node.status}</h2>
+                  <h2 className="card">{node.title}</h2>
+                  <h2 className="card">{node.status}</h2>
                 </div>
               </Link>
             ))}

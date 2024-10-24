@@ -6,6 +6,7 @@
   transition: transform 1s;
   position: relative;
   width: 175px;
+  height: 60px;
 }
 
 .single_card_report h2 {
