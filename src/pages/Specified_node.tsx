@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import RuleIcon from "@mui/icons-material/Rule";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/report.css";
 
 type sub_nodes = {
@@ -59,6 +61,17 @@ export const Specified_node = () => {
 
   const handle_report_delete = async (report_id: string) => {
     console.log(report_id); // ! not ready yet.
+
+    const response = await fetch(
+      `http://localhost/api/v1/remove/report/null/${report_id}`,
+      {
+        method: "PATCH",
+      }
+    );
+
+    if (response.ok) {
+      toast.success("הבדיקה נמחקה בהצלחה");
+    }
   };
 
   const handle_report_rules = async (report_id: string) => {
@@ -179,6 +192,19 @@ export const Specified_node = () => {
           <Button onClick={handle_report_post}>reports</Button>
         </ButtonGroup>
       )}
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

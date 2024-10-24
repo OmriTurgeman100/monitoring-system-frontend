@@ -2,6 +2,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import AutoDeleteIcon from "@mui/icons-material/AutoDelete";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import IconButton from "@mui/material/IconButton";
 import "../styles/report_rules.css";
 
@@ -26,6 +28,7 @@ export const Get_Report_Rules = () => {
 
     if (response.ok) {
       setRules(data);
+      toast.success("החוקים נקלטו בהצלחה");
     }
   };
 
@@ -55,12 +58,20 @@ export const Get_Report_Rules = () => {
 
       const data = await response.json();
       console.log(data);
+
+      if (response.ok) {
+        toast.error("החוקים נמחקו בהצלחה");
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      }
     }
   };
 
   useEffect(() => {
     fetch_rules();
-  }, [rules]);
+  }, []);
 
   return (
     <div>
@@ -104,6 +115,19 @@ export const Get_Report_Rules = () => {
           <AutoDeleteIcon sx={{ color: "white", fontSize: 40 }} />
         </IconButton>
       </div>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
