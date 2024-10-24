@@ -157,7 +157,7 @@ export const Specified_node = () => {
               margin: "10px",
             }}
           >
-            <Button>rules</Button>
+            <Button disabled>rules</Button>
             <Button disabled>nodes</Button>
             <Button disabled>reports</Button>
           </ButtonGroup>
