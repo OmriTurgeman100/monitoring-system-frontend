@@ -15,7 +15,7 @@ type rule = {
 };
 
 export const Get_Report_Rules = () => {
-  const { id } = useParams();
+  const { id, parent } = useParams();
   const [rules, setRules] = useState<rule[]>([]);
   const navigate = useNavigate();
 
@@ -48,6 +48,7 @@ export const Get_Report_Rules = () => {
           },
           body: JSON.stringify({
             report_id: id,
+            parent: parent,
           }),
         }
       );

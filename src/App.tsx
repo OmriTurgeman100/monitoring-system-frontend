@@ -22,7 +22,7 @@ const router = createBrowserRouter(
       <Route path="post/node/:id" element={<PostNode />}></Route>
       <Route path="post/root" element={<PostNode />}></Route>
       <Route path="post/report/:id" element={<PostReport />}></Route>
-      <Route path="report/rules/:id" element={<Get_Report_Rules />}></Route>
+      <Route path="report/rules/:id/:parent" element={<Get_Report_Rules />}></Route>
       <Route path="post/rep/rules/:id" element={<Post_Report_Rules />}></Route>
     </Route>
   )

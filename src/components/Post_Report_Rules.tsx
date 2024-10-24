@@ -43,9 +43,9 @@ export const Post_Report_Rules = () => {
     const data = await response.json();
 
     if (response.ok) {
-      navigate(`/report/rules/${id}`);
+      navigate(-1);
     } else {
-      toast.error('שגיאה, נא למלא את כל השדות')
+      toast.error("שגיאה, נא למלא את כל השדות");
     }
 
     console.log(data);
