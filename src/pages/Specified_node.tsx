@@ -63,6 +63,8 @@ export const Specified_node = () => {
 
   const handle_report_rules = async (report_id: string) => {
     navigate(`/report/rules/${report_id}`);
+
+    
   };
 
   useEffect(() => {
