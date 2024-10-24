@@ -10,7 +10,8 @@ import { Specified_node } from "./pages/Specified_node";
 import { PostNode } from "./components/PostNode";
 import { Root_nodes } from "./pages/Root_nodes";
 import { PostReport } from "./components/PostReport";
-import { Report_Rules } from "./components/Report_Rules";
+import { Get_Report_Rules } from "./components/Get_Report_Rules";
+import { Post_Report_Rules } from "./components/Post_Report_Rules";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -21,7 +22,8 @@ const router = createBrowserRouter(
       <Route path="post/node/:id" element={<PostNode />}></Route>
       <Route path="post/root" element={<PostNode />}></Route>
       <Route path="post/report/:id" element={<PostReport />}></Route>
-      <Route path="report/rules/:id" element={<Report_Rules />}></Route>
+      <Route path="report/rules/:id" element={<Get_Report_Rules />}></Route>
+      <Route path="post/rep/rules/:id" element={<Post_Report_Rules />}></Route>
     </Route>
   )
 );

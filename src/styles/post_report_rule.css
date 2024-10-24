@@ -1,0 +1,91 @@
+.post_rule_container {
+  display: flex;
+  background-color: aqua;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #212529;
+  width: 500px;
+  height: 500px;
+  margin: 100px auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+.rule_title {
+  background-color: #343a40;
+  border-radius: 5px;
+  color: aliceblue;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 30%;
+}
+
+.selected_report {
+  background-color: #212529;
+  color: aliceblue;
+  opacity: 30%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.rule_design {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rules_menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  background-color: #343a40;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px;
+}
+
+.custom-select {
+  background: none;
+  color: rgb(255, 255, 255);
+  background: black;
+  padding: 5px;
+}
+
+.threshold {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #212529;
+  width: 20px;
+}
+
+.action_panel {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    background-color: #343a40;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 10px;
+    border-radius: 5px;
+    color: aliceblue;
+}
+
+.action_panel h2 {
+  opacity: 30%;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+/* Hide number input spinners in Chrome, Safari, and Edge */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Chrome, Safari */
+  margin: 0; /* Remove margin */
+}

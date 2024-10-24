@@ -5,7 +5,8 @@
     gap: 20px;
     background-color: #212529;
     width: 500px;
-    height: 500px;
+    min-height: 100px;
+    height: fit-content;
     margin: 100px auto;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     border-radius: 10px;
