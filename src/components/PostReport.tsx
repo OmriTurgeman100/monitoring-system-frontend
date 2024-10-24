@@ -63,7 +63,7 @@ export const PostReport = () => {
     if (response.ok) {
       navigate(-1);
     } else {
-      console.log(message)
+      console.log(message);
       toast.error('הריפורט הנ"ל כבר משויך לקוביה');
 
       console.log("response is bad", response);

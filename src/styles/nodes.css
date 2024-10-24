@@ -6,8 +6,13 @@
   padding: 20px;
 }
 
-.single_card {
-  background-color: #6c757d;
+h2 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.single_card_expired {
+  background: linear-gradient(135deg, #6c757d, #343a40);
   padding: 15px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -15,11 +20,45 @@
   transition: transform 1s;
 }
 
-.single_card h2 {
-  margin-bottom: 10px;
-  color: white;
+.single_card_up {
+  background: linear-gradient(135deg, #06bd00 0%, #00ff88 100%);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80px;
+  transition: transform 1s;
 }
 
-.single_card:hover {
+.single_card_down {
+  background: linear-gradient(135deg, #ff2600 0%, #e95d3a 100%);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80px;
+  transition: transform 1s;
+}
+
+.single_card_critical {
+  background: linear-gradient(135deg, #ff8800 0%, #ffd700 100%);
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 80px;
+  transition: transform 1s;
+}
+
+.single_card_expired:hover {
+  transform: scale(1.05);
+}
+
+.single_card_up:hover {
+  transform: scale(1.05);
+}
+
+.single_card_down:hover {
+  transform: scale(1.05);
+}
+
+.single_card_critical:hover {
   transform: scale(1.05);
 }

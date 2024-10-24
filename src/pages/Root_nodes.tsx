@@ -47,7 +47,17 @@ export const Root_nodes = () => {
       <div className="grid-cards-container">
         {nodes.map((node) => (
           <Link to={`/${node.node_id}`} key={node.node_id}>
-            <div className="single_card">
+            <div
+              className={`${
+                node.status === "up"
+                  ? "single_card_up"
+                  : node.status === "down"
+                  ? "single_card_down"
+                  : node.status === "critical"
+                  ? "single_card_critical"
+                  : "single_card_expired"
+              }`}
+            >
               <h2>{node.title}</h2>
               <h2>{node.status}</h2>
             </div>
