@@ -1,0 +1,34 @@
+.node_rules_container {
+    margin:20px auto;
+    width: 500px;
+    height: 500px;
+    background-color: #212529;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+}
+
+.node_rule {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    color: #F8F9FA;
+    padding: 20px;
+    text-align: center;
+}
+
+.status {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+     text-align: center;
+}
+
+.operator {
+    background-color: #343A40;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
