@@ -4,6 +4,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
+import RuleIcon from "@mui/icons-material/Rule";
+import DeleteIcon from "@mui/icons-material/Delete";
 import "../styles/report.css";
 
 type sub_nodes = {
@@ -53,6 +55,14 @@ export const Specified_node = () => {
 
   const handle_report_post = async () => {
     navigate(`/post/report/${id}`);
+  };
+
+  const handle_report_delete = async (report_id: string) => {
+    console.log(report_id); // ! not ready yet.
+  };
+
+  const handle_report_rules = async (report_id: string) => {
+    navigate(`/report/rules/${report_id}`);
   };
 
   useEffect(() => {
@@ -108,6 +118,32 @@ export const Specified_node = () => {
               <div key={report.id} className="single_card_report">
                 <h2>{report.title}</h2>
                 <p>{report.value}</p>
+                <Button
+                  onClick={() => handle_report_delete(report.report_id)}
+                  sx={{
+                    position: "absolute",
+                    bottom: "60px",
+                    right: "0px",
+                    left: "165px",
+                    color: "white",
+                  }}
+                >
+                  {" "}
+                  <DeleteIcon />{" "}
+                </Button>
+                <Button
+                  onClick={() => handle_report_rules(report.report_id)}
+                  sx={{
+                    position: "absolute",
+                    bottom: "30px",
+                    right: "0px",
+                    left: "165px",
+                    color: "white",
+                  }}
+                >
+                  {" "}
+                  <RuleIcon />{" "}
+                </Button>
               </div>
             ))}
           </div>
