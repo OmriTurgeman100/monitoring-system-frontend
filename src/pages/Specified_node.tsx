@@ -78,6 +78,10 @@ export const Specified_node = () => {
     navigate(`/report/rules/${report_id}/${id}`);
   };
 
+  const handle_nodes_rules = () => {
+    navigate(`/get/node/rules/${id}`);
+  };
+
   useEffect(() => {
     get_data();
   }, [id]);
@@ -117,7 +121,7 @@ export const Specified_node = () => {
               margin: "10px",
             }}
           >
-            <Button>rules</Button>
+            <Button onClick={handle_nodes_rules}>rules</Button>
             <Button onClick={handle_nodes_post}>nodes</Button>
             <Button disabled>reports</Button>
           </ButtonGroup>
