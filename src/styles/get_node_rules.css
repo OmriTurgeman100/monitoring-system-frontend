@@ -1,34 +1,86 @@
 .node_rules_container {
-    margin:20px auto;
-    width: 500px;
-    height: 500px;
-    background-color: #212529;
-    padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
+  margin: 20px auto;
+  width: 500px;
+  height: 700px;
+  background-color: #212529;
+  position: relative;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .node_rule {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    color: #F8F9FA;
-    padding: 20px;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
 }
 
 .status {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-     text-align: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
+.node_stat_up {
+    background: linear-gradient(135deg, #32cd32, #006400);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(0, 128, 0, 0.5);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .node_stat_down {
+    background: linear-gradient(135deg, #fa3f06, #b22222);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(178, 34, 34, 0.5);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .node_stat_critical {
+    background: linear-gradient(135deg, #ee9b01, #ff4500);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 20px rgba(255, 69, 0, 0.5);
+    color: white;
+    font-weight: bold;
+  }
+  
+
 .operator {
-    background-color: #343A40;
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #343a40;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.down {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, red, orange);
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.up {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgb(123, 255, 0), rgb(0, 200, 0));
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.critical {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(90deg, rgba(255, 196, 0, 0.877), rgb(255, 196, 0));
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+

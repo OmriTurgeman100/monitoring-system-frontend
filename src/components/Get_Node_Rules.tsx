@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "../styles/get_node_rules.css";
 
-// Define the Rule type
 interface Condition {
   node_id: number;
   status: "up" | "down";
+  title: string;
 }
 
 interface ConditionsGroup {
@@ -33,12 +33,11 @@ export const Get_Node_Rules = () => {
       `http://localhost/api/v1/get/node/rules/${id}`
     );
 
-    const data: Rule[] = await response.json(); // Explicitly type the response data
-
+    const data: Rule[] = await response.json();
     console.log(data);
 
     if (response.ok) {
-      setRules(data); // Set the data to state
+      setRules(data);
     }
   };
 
@@ -49,25 +48,41 @@ export const Get_Node_Rules = () => {
   return (
     <div>
       <div className="node_rules_container">
-      
         {rules.map((rule) => (
           <div className="node_rule" key={rule.rule_id}>
             {rule.conditions.conditions.map((single_rule) => (
-              <div>
-                <h2 className="operator">{rule.conditions.operator}</h2>
-
-                <div className="status">
-                  <h2>{single_rule.node_id}</h2>
-                  <h2>=</h2>
-                  <h2>{single_rule.status}</h2>
-                </div>
-
-            
+              <div className="status">
+                <h3 className="operator">{rule.conditions.operator}</h3>
+                <h3 className="title">{single_rule.title}</h3>
+                <h3>=</h3>
+                <h3
+                  className={`${
+                    single_rule.status === "down"
+                      ? "node_stat_down"
+                      : single_rule.status === "up"
+                      ? "node_stat_up"
+                      : single_rule.status === "critical"
+                      ? "node_stat_critical"
+                      : null
+                  }`}
+                >
+                  {single_rule.status}
+                </h3>
               </div>
-              
             ))}
+            <h3>==</h3>
+            <h3
+              className={`${
+                rule.action === "set_parent_status_down"
+                  ? "down"
+                  : rule.action === "set_parent_status_critical"
+                  ? "critical"
+                  : rule.action === "set_parent_status_up"
+                  ? "up"
+                  : null
+              }`}
+            ></h3>
           </div>
-          
         ))}
       </div>
     </div>
