@@ -1,0 +1,9 @@
+.post_node_rules {
+    margin: 20px auto;
+    width: 500px;
+    height: 700px;
+    background-color: #212529;
+    position: relative;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

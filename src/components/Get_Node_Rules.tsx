@@ -30,7 +30,6 @@ export const Get_Node_Rules = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Set state to use Rule[] type
   const [rules, setRules] = useState<Rule[]>([]);
 
   const fetch_node_rules = async () => {
