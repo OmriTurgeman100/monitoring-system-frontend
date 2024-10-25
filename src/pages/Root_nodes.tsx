@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/nodes.css";
 
 type root_nodes = {
@@ -34,8 +36,22 @@ export const Root_nodes = () => {
     navigate(`/post/root`);
   };
 
+  const start_backend_threaded_process = async () => {
+    const response = await fetch(
+      "http://localhost/api/v1/auto/eval/agent/thread"
+    );
+
+    const data = await response.json();
+    console.log(data);
+
+    if (response.ok) {
+      toast.success("תהליך החוקים ברקע החל לרוץ");
+    }
+  };
+
   useEffect(() => {
     get_root_nodes();
+    start_backend_threaded_process();
 
     // setInterval(get_root_nodes, 5000);
   }, []);
@@ -76,6 +92,18 @@ export const Root_nodes = () => {
         <Button onClick={handle_nodes_post}>nodes</Button>
         <Button disabled>reports</Button>
       </ButtonGroup>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
