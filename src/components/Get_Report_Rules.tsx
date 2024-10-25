@@ -60,7 +60,7 @@ export const Get_Report_Rules = () => {
       console.log(data);
 
       if (response.ok) {
-        toast.error("החוקים נמחקו בהצלחה");
+        toast.success("החוקים נמחקו בהצלחה");
 
         setTimeout(() => {
           window.location.reload();

@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import AutoDeleteIcon from "@mui/icons-material/AutoDelete";
+import IconButton from "@mui/material/IconButton";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../styles/get_node_rules.css";
 
 interface Condition {
@@ -45,6 +49,26 @@ export const Get_Node_Rules = () => {
     fetch_node_rules();
   }, []);
 
+  const handle_node_rules_delete = async () => {
+    for (const rule of rules) {
+      const rule_id: number = rule.rule_id;
+      const response = await fetch(
+        `http://localhost/api/v1/delete/node/rule/${rule_id}`,
+        {
+          method: "DELETE",
+        }
+      );
+
+      if (response.ok) {
+        toast.success("החוקים נמחקו בהצלחה");
+
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
+      }
+    }
+  };
+
   return (
     <div>
       <div className="node_rules_container">
@@ -84,7 +108,25 @@ export const Get_Node_Rules = () => {
             ></h3>
           </div>
         ))}
+        <IconButton
+          onClick={handle_node_rules_delete}
+          sx={{ position: "absolute", top: "-8px", right: "-8px" }}
+        >
+          <AutoDeleteIcon sx={{ color: "white", fontSize: 35 }} />
+        </IconButton>
       </div>
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };
