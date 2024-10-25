@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AutoDeleteIcon from "@mui/icons-material/AutoDelete";
 import IconButton from "@mui/material/IconButton";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/get_node_rules.css";
@@ -69,6 +70,10 @@ export const Get_Node_Rules = () => {
     }
   };
 
+  const handle_node_rules_post = () => {
+    navigate(`/post/node/rules/${id}`);
+  };
+
   return (
     <div>
       <div className="node_rules_container">
@@ -113,6 +118,13 @@ export const Get_Node_Rules = () => {
           sx={{ position: "absolute", top: "-8px", right: "-8px" }}
         >
           <AutoDeleteIcon sx={{ color: "white", fontSize: 35 }} />
+        </IconButton>
+
+        <IconButton
+          onClick={handle_node_rules_post}
+          sx={{ position: "absolute", bottom: "-15px", left: "235px" }}
+        >
+          <AddCircleIcon sx={{ color: "white", fontSize: 35 }} />
         </IconButton>
       </div>
       <ToastContainer

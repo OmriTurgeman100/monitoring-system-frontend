@@ -13,6 +13,7 @@ import { PostReport } from "./components/PostReport";
 import { Get_Report_Rules } from "./components/Get_Report_Rules";
 import { Post_Report_Rules } from "./components/Post_Report_Rules";
 import { Get_Node_Rules } from "./components/Get_Node_Rules";
+import { Post_Node_Rules } from "./components/Post_Node_Rules";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -26,6 +27,7 @@ const router = createBrowserRouter(
       <Route path="report/rules/:id/:parent" element={<Get_Report_Rules />}></Route>
       <Route path="post/rep/rules/:id" element={<Post_Report_Rules />}></Route>
       <Route path="get/node/rules/:id" element={<Get_Node_Rules />}></Route>
+      <Route path="post/node/rules/:id" element={<Post_Node_Rules />}></Route>
     </Route>
   )
 );
