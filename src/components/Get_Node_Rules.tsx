@@ -121,7 +121,7 @@ export const Get_Node_Rules = () => {
 
         <IconButton
           onClick={handle_node_rules_post}
-          sx={{ position: "absolute", bottom: "-15px", left: "235px" }}
+          sx={{ position: "absolute", bottom: "-15px", left: "50%" }}
         >
           <AddCircleIcon sx={{ color: "white", fontSize: 35 }} />
         </IconButton>
