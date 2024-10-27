@@ -91,9 +91,8 @@ export const Post_Node_Rules = () => {
         toast.success("החוקים נוספו בהצלחה");
 
         setTimeout(() => {
-          window.location.reload();
+          navigate(-1);
         }, 2000);
-        navigate(-1);
       }
     }
   };
