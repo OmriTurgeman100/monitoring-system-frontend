@@ -67,6 +67,15 @@ export const Get_Node_Rules = () => {
         }, 2000);
       }
     }
+
+    const response = await fetch(
+      `http://localhost/api/v1/check/rules/parent/node/${id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    console.log(response);
   };
 
   const handle_node_rules_post = () => {
@@ -121,7 +130,7 @@ export const Get_Node_Rules = () => {
 
         <IconButton
           onClick={handle_node_rules_post}
-          sx={{ position: "absolute", bottom: "-15px", left: "50%" }}
+          sx={{ position: "absolute", bottom: "-15px", left: "44%" }}
         >
           <AddCircleIcon sx={{ color: "white", fontSize: 35 }} />
         </IconButton>

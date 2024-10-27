@@ -2,7 +2,8 @@
   margin: 20px auto;
   min-width: 500px;
   width: fit-content;
-  height: 700px;
+  min-height: 570px;
+  height: fit-content;
   background-color: #212529;
   position: relative;
   padding: 20px;

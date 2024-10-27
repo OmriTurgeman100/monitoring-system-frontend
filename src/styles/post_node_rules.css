@@ -1,7 +1,8 @@
 .post_node_rules {
   margin: 20px auto;
   width: 500px;
-  height: 700px;
+  min-height: 570px;
+  height: fit-content;
   background-color: #212529;
   position: relative;
   padding: 20px;
