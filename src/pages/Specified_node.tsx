@@ -106,6 +106,9 @@ export const Specified_node = () => {
                 >
                   <h2 className="card">{node.title}</h2>
                   <h2 className="card">{node.status}</h2>
+                  <Button sx={{ position: "absolute", left: "185px", top: "5px", color:  "white"}}>
+                    <DeleteIcon />
+                  </Button>
                 </div>
               </Link>
             ))}
