@@ -14,6 +14,7 @@ import { Get_Report_Rules } from "./components/Get_Report_Rules";
 import { Post_Report_Rules } from "./components/Post_Report_Rules";
 import { Get_Node_Rules } from "./components/Get_Node_Rules";
 import { Post_Node_Rules } from "./components/Post_Node_Rules";
+import { TimeSeriesGraph } from "./components/TimeSeriesGraph";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,7 +29,7 @@ const router = createBrowserRouter(
       <Route path="post/rep/rules/:id" element={<Post_Report_Rules />}></Route>
       <Route path="get/node/rules/:id" element={<Get_Node_Rules />}></Route>
       <Route path="post/node/rules/:id" element={<Post_Node_Rules />}></Route>
-      <Route path="report/graph/<:id>"></Route>
+      <Route path="/report/graph/:id" element={<TimeSeriesGraph />}></Route>
     </Route>
   )
 );

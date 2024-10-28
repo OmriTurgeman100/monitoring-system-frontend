@@ -11,7 +11,8 @@ export const TimeSeriesGraph = () => {
   return (
     <div>
       <h2>{id}</h2>
-      <h1>future graph page</h1>
+
+     
     </div>
   );
 };
