@@ -82,6 +82,19 @@ export const Specified_node = () => {
     navigate(`/get/node/rules/${id}`);
   };
 
+  const handle_delete_node = async (node_id: number) => {
+    const response = await fetch(
+      `http://localhost/api/v1/delete/node/${node_id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    if (response.ok) {
+      toast.success("הקוביה נמחקה בהצלחה");
+    }
+  };
+
   useEffect(() => {
     get_data();
   }, [id]);
@@ -92,25 +105,33 @@ export const Specified_node = () => {
         <div>
           <div className="grid-cards-container">
             {nodesData.nodes.map((node) => (
-              <Link to={`/${node.node_id}`} key={node.node_id}>
-                <div
-                  className={`${
-                    node.status === "up"
-                      ? "single_card_up"
-                      : node.status === "down"
-                      ? "single_card_down"
-                      : node.status === "critical"
-                      ? "single_card_critical"
-                      : "single_card_expired"
-                  }`}
-                >
+              <div
+                className={`${
+                  node.status === "up"
+                    ? "single_card_up"
+                    : node.status === "down"
+                    ? "single_card_down"
+                    : node.status === "critical"
+                    ? "single_card_critical"
+                    : "single_card_expired"
+                }`}
+              >
+                <Link to={`/${node.node_id}`} key={node.node_id}>
                   <h2 className="card">{node.title}</h2>
                   <h2 className="card">{node.status}</h2>
-                  <Button sx={{ position: "absolute", left: "185px", top: "5px", color:  "white"}}>
-                    <DeleteIcon />
-                  </Button>
-                </div>
-              </Link>
+                </Link>
+                <Button
+                  onClick={() => handle_delete_node(node.node_id)}
+                  sx={{
+                    position: "absolute",
+                    left: "185px",
+                    top: "5px",
+                    color: "white",
+                  }}
+                >
+                  <DeleteIcon />
+                </Button>
+              </div>
             ))}
           </div>
 
