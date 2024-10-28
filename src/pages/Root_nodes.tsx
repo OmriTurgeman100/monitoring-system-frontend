@@ -5,6 +5,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import DeleteIcon from "@mui/icons-material/Delete";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/nodes.css";
 
@@ -36,22 +37,21 @@ export const Root_nodes = () => {
     navigate(`/post/root`);
   };
 
-  const start_backend_threaded_process = async () => {
+  const handle_delete_node = async (node_id: number) => {
     const response = await fetch(
-      "http://localhost/api/v1/auto/eval/agent/thread"
+      `http://localhost/api/v1/delete/node/${node_id}`,
+      {
+        method: "DELETE",
+      }
     );
 
-    const data = await response.json();
-    console.log(data);
-
     if (response.ok) {
-      toast.success("תהליך החוקים ברקע החל לרוץ");
+      toast.success("הקוביה נמחקה בהצלחה");
     }
   };
 
   useEffect(() => {
     get_root_nodes();
-    start_backend_threaded_process();
 
     // setInterval(get_root_nodes, 5000);
   }, []);
@@ -60,22 +60,33 @@ export const Root_nodes = () => {
     <div>
       <div className="grid-cards-container">
         {nodes.map((node) => (
-          <Link to={`/${node.node_id}`} key={node.node_id}>
-            <div
-              className={`${
-                node.status === "up"
-                  ? "single_card_up"
-                  : node.status === "down"
-                  ? "single_card_down"
-                  : node.status === "critical"
-                  ? "single_card_critical"
-                  : "single_card_expired"
-              }`}
-            >
+          <div
+            className={`${
+              node.status === "up"
+                ? "single_card_up"
+                : node.status === "down"
+                ? "single_card_down"
+                : node.status === "critical"
+                ? "single_card_critical"
+                : "single_card_expired"
+            }`}
+          >
+            <Link to={`/${node.node_id}`} key={node.node_id}>
               <h2 className="card">{node.title}</h2>
               <h2 className="card">{node.status}</h2>
-            </div>
-          </Link>
+            </Link>
+            <Button
+              onClick={() => handle_delete_node(node.node_id)}
+              sx={{
+                position: "absolute",
+                left: "185px",
+                top: "5px",
+                color: "white",
+              }}
+            >
+              <DeleteIcon />
+            </Button>
+          </div>
         ))}
       </div>
       <ButtonGroup
