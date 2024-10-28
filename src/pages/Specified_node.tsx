@@ -7,6 +7,7 @@ import ButtonGroup from "@mui/material/ButtonGroup";
 import RuleIcon from "@mui/icons-material/Rule";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { ToastContainer, toast } from "react-toastify";
+import AutoGraphIcon from "@mui/icons-material/AutoGraph";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/report.css";
 
@@ -93,6 +94,10 @@ export const Specified_node = () => {
     if (response.ok) {
       toast.success("הקוביה נמחקה בהצלחה");
     }
+  };
+
+  const handle_report_graph = async (report_id: string) => {
+    navigate(`/report/graph/${report_id}`);
   };
 
   useEffect(() => {
@@ -184,6 +189,17 @@ export const Specified_node = () => {
                 >
                   {" "}
                   <RuleIcon />{" "}
+                </Button>
+                <Button
+                  onClick={() => handle_report_graph(report.report_id)}
+                  sx={{
+                    position: "absolute",
+                    bottom: "2px",
+                    left: "165px",
+                    color: "white",
+                  }}
+                >
+                  <AutoGraphIcon />
                 </Button>
               </div>
             ))}

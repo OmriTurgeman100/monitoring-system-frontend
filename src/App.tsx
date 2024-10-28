@@ -28,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="post/rep/rules/:id" element={<Post_Report_Rules />}></Route>
       <Route path="get/node/rules/:id" element={<Get_Node_Rules />}></Route>
       <Route path="post/node/rules/:id" element={<Post_Node_Rules />}></Route>
+      <Route path="report/graph/<:id>"></Route>
     </Route>
   )
 );
