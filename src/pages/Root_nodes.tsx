@@ -79,7 +79,7 @@ export const Root_nodes = () => {
               onClick={() => handle_delete_node(node.node_id)}
               sx={{
                 position: "absolute",
-                left: "185px",
+                left: "175px",
                 top: "5px",
                 color: "white",
               }}
