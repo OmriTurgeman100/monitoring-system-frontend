@@ -1,6 +1,6 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const TimeSeriesGraph = () => {
   const { id } = useParams();

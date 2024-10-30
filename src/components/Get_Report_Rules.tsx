@@ -38,7 +38,7 @@ export const Get_Report_Rules = () => {
 
   const delete_report_rules = async () => {
     for (const rule of rules) {
-      let rule_id: number = rule.rule_id;
+      const rule_id: number = rule.rule_id;
 
       console.log(rule_id);
 

@@ -17,7 +17,7 @@ export const Navbar = () => {
 
     const data: api_response = await response.json();
 
-    let israel_time: string = data.time;
+    const israel_time: string = data.time;
 
     if (response.ok) {
       setLoading(false);

@@ -33,7 +33,7 @@ export const PostNode = () => {
         console.log("else block");
       }
     } catch (error) {
-      console.log("test");
+      console.log(error);
     }
   };
 
