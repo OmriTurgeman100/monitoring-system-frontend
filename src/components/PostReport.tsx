@@ -58,7 +58,7 @@ export const PostReport = () => {
 
     const data = await response.json();
 
-    let message: string = data.message;
+    const message: string = data.message;
 
     if (response.ok) {
       navigate(-1);
