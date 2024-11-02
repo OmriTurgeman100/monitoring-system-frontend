@@ -64,20 +64,19 @@
 }
 
 .action_panel {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-    background-color: #343a40;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    padding: 10px;
-    border-radius: 5px;
-    color: aliceblue;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  background-color: #343a40;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 10px;
+  border-radius: 5px;
+  color: aliceblue;
 }
 
 .action_panel h2 {
   opacity: 30%;
 }
-
 
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
