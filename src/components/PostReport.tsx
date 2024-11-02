@@ -74,7 +74,7 @@ export const PostReport = () => {
   );
 
   return (
-    <div className="report_container">
+    <div>
       <input
         type="text"
         placeholder="Search by title..."
@@ -82,42 +82,47 @@ export const PostReport = () => {
         onChange={(e) => setSearchQuery(e.target.value)}
         className="search_input"
       />
-
-      {filteredReports.length > 0 ? (
-        filteredReports.map((report) => (
-          <div key={report.report_id} className="report">
-            <Button
-              onClick={() =>
-                post_report(report.report_id, report.title, report.description)
-              }
-              variant="contained"
-              size="small"
-              sx={{
-                minWidth: "20px",
-                padding: "2px 6px",
-                fontSize: "10px",
-              }}
-            >
-              <AddOutlinedIcon sx={{ fontSize: "16px" }} />{" "}
-            </Button>
-            <h3>{report.title}</h3>
-            <ToastContainer
-              position="bottom-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="dark"
-            />
-          </div>
-        ))
-      ) : (
-        <p></p>
-      )}
+      <div className="report_container">
+        {filteredReports.length > 0 ? (
+          filteredReports.map((report) => (
+            <div key={report.report_id} className="report">
+              <Button
+                onClick={() =>
+                  post_report(
+                    report.report_id,
+                    report.title,
+                    report.description
+                  )
+                }
+                variant="contained"
+                size="small"
+                sx={{
+                  minWidth: "20px",
+                  padding: "2px 6px",
+                  fontSize: "10px",
+                }}
+              >
+                <AddOutlinedIcon sx={{ fontSize: "16px" }} />{" "}
+              </Button>
+              <h3>{report.title}</h3>
+              <ToastContainer
+                position="bottom-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
+            </div>
+          ))
+        ) : (
+          <p></p>
+        )}
+      </div>
     </div>
   );
 };

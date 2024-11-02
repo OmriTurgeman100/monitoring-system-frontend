@@ -3,13 +3,21 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin: 40px auto;
+  margin: auto;
   height: 500px;
   width: 500px;
   padding: 20px;
   border-radius: 5px;
   background-color: #212529;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.search_input {
+  width: 525px;
+  margin-left: 500px;
+  margin-top: 30px;
 }
 
 .report {
@@ -19,5 +27,5 @@
 }
 
 h3 {
-    color: #F8F9FA;
+  color: #f8f9fa;
 }
