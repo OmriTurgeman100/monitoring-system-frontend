@@ -60,7 +60,7 @@ export const Get_Node_Rules = () => {
       );
 
       if (response.ok) {
-        toast.success("החוקים נמחקו בהצלחה");
+        toast.success("rules have been deleted");
 
         setTimeout(() => {
           window.location.reload();

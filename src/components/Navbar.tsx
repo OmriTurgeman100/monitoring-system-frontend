@@ -26,7 +26,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    // setInterval(get_time, 1000);
+    setInterval(get_time, 1000);
 
     get_time();
   }, []);
@@ -38,8 +38,8 @@ export const Navbar = () => {
         <h2 className="israel_time">
           {loading ? <CircularProgress size={22} /> : time}
         </h2>
-        <NavLink to="/">עמוד ראשי</NavLink>
-        <NavLink to="/about">אודות המערכת</NavLink>
+        <NavLink to="/"> root</NavLink>
+        <NavLink to="/about">about </NavLink>
       </header>
 
       <main>
