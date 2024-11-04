@@ -64,7 +64,7 @@ export const PostReport = () => {
       navigate(-1);
     } else {
       console.log(message);
-      toast.error('הריפורט הנ"ל כבר משויך לקוביה');
+      toast.error("report already has a parent")
 
       console.log("response is bad", response);
     }
