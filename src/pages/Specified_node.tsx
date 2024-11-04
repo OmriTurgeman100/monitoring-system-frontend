@@ -8,6 +8,7 @@ import RuleIcon from "@mui/icons-material/Rule";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { ToastContainer, toast } from "react-toastify";
 import AutoGraphIcon from "@mui/icons-material/AutoGraph";
+import Checkbox from "@mui/material/Checkbox";
 import "react-toastify/dist/ReactToastify.css";
 import "../styles/report.css";
 
@@ -35,6 +36,8 @@ type data = {
   reports?: reports[];
   nodes?: sub_nodes[];
 };
+
+const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
 export const Specified_node = () => {
   const navigate = useNavigate();
@@ -125,6 +128,10 @@ export const Specified_node = () => {
                   <h2 className="card">{node.title}</h2>
                   <h2 className="card">{node.status}</h2>
                 </Link>
+                <Checkbox
+                  {...label}
+                  sx={{ position: "absolute", left: "185px", top: "30px" }}
+                />
                 <Button
                   onClick={() => handle_delete_node(node.node_id)}
                   sx={{
