@@ -23,9 +23,7 @@ export const LatestReports = () => {
   useEffect(() => {
     fetch_latest_reports();
 
-    setInterval(fetch_latest_reports, 3000);
-
-    
+    setInterval(fetch_latest_reports, 1000);
   }, []);
 
   return (
