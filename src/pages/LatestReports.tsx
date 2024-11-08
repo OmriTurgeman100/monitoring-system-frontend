@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import "../styles/latest_reports.css"
 
 type reports = {
-  time: Date;
+  time: string;
   title: string;
   value: number;
 };
@@ -28,9 +29,9 @@ export const LatestReports = () => {
     <div>
       <div className="grid-cards-container">
         {reports.map((report) => (
-          <div className="single_card_report">
+          <div className="single_card_report_distinct">
             <h2>{report.title}</h2>
-            {/* <p>{report.time}</p> */}
+            <p>{report.time}</p>
             <p>{report.value}</p>
           </div>
         ))}
