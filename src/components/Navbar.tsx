@@ -40,6 +40,7 @@ export const Navbar = () => {
         </h2>
         <NavLink to="/"> root</NavLink>
         <NavLink to="/about">about </NavLink>
+        <NavLink to="/latest/reports">reports</NavLink>
       </header>
 
       <main>
