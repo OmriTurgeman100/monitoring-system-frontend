@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../styles/latest_reports.css"
+import "../styles/latest_reports.css";
 
 type reports = {
   time: string;
@@ -17,13 +17,16 @@ export const LatestReports = () => {
 
     if (response.ok) {
       setReports(data);
-      console.log(reports);
     }
   };
 
   useEffect(() => {
     fetch_latest_reports();
-  }, [reports]);
+
+    setInterval(fetch_latest_reports, 3000);
+
+    
+  }, []);
 
   return (
     <div>
@@ -31,7 +34,7 @@ export const LatestReports = () => {
         {reports.map((report) => (
           <div className="single_card_report_distinct">
             <h2>{report.title}</h2>
-            <p>{report.time}</p>
+            <p>{new Date(report.time).toLocaleString()}</p>
             <p>{report.value}</p>
           </div>
         ))}
