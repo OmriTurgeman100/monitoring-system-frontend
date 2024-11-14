@@ -28,7 +28,7 @@ export const Get_Report_Rules = () => {
 
     if (response.ok) {
       setRules(data);
-      toast.success("rules deleted successfully");
+      toast.success("rules fetched successfully");
     }
   };
 
