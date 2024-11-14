@@ -53,7 +53,7 @@ export const Root_nodes = () => {
   useEffect(() => {
     get_root_nodes();
 
-    setInterval(get_root_nodes, 5000);
+    setInterval(get_root_nodes, 1000);
   }, []);
 
   return (
