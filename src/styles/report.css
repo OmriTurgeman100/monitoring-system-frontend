@@ -23,7 +23,14 @@
   left: 135px;
   top: 15px;
   font-weight: bold;
+}
 
+.single_card_report p.reportime {
+  font-size: 20px;
+  color: #ffffff;
+  position: relative;
+  left: 105px;
+  top: 15px;
 }
 
 .single_card_report:hover {
