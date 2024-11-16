@@ -171,7 +171,16 @@ export const Specified_node = () => {
               <div key={report.id} className="single_card_report">
                 <h2>{report.title}</h2>
                 <p>{report.value}</p>
-                <p className="reportime">{report.time}</p>
+                <p className="reportime">
+                  {new Intl.DateTimeFormat("en-GB", {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  }).format(new Date(report.time))}
+                </p>
                 <Button
                   onClick={() => handle_report_delete(report.report_id)}
                   sx={{
