@@ -171,6 +171,7 @@ export const Specified_node = () => {
               <div key={report.id} className="single_card_report">
                 <h2>{report.title}</h2>
                 <p>{report.value}</p>
+                <p className="report_time">{report.time}</p>
                 <Button
                   onClick={() => handle_report_delete(report.report_id)}
                   sx={{
