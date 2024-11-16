@@ -91,7 +91,7 @@ export const Post_Report_Rules = () => {
           <select
             value={action}
             onChange={handleActionnChange}
-            className="custom-select"
+            className="custom-select"sele
           >
             <option value="set_parent_status_up">{"up"}</option>
             <option value="set_parent_status_down">{"down"}</option>
