@@ -31,8 +31,10 @@
 }
 
 .report-time {
-  background-color: #212529;
-  width: 330px;
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  width: 350px;
   margin-top: 20px;
   padding: 5px;
   border-radius: 5px;

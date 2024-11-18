@@ -74,7 +74,7 @@ export const PostReport = () => {
   );
 
   return (
-    <div>
+    <div className="root_post_container">
       <input
         type="text"
         placeholder="Search by title..."

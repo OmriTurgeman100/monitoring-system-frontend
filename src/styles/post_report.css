@@ -1,3 +1,15 @@
+.root_post_container {
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  width: 550px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
 .report_container {
   background-color: aqua;
   display: flex;
@@ -16,8 +28,15 @@
 
 .search_input {
   width: 525px;
-  margin-left: 500px;
-  margin-top: 30px;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.search_input::placeholder {
+  color: #ffffff;
+  font-size: 18px;
+  opacity: 40%;
 }
 
 .report {
@@ -27,5 +46,5 @@
 }
 
 h3 {
-  color: #f8f9fa;
+  color: #ffffff;
 }

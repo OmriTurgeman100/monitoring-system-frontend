@@ -1,6 +1,5 @@
 .post_rule_container {
   display: flex;
-  background-color: aqua;
   flex-direction: column;
   gap: 20px;
   background-color: #212529;
@@ -78,7 +77,7 @@
   opacity: 30%;
 }
 
-.rule_design select, 
+.rule_design select,
 .action_panel select {
   background-color: #343a40; /* Dark background for a modern look */
   color: #ffffff; /* White text for contrast */
@@ -104,7 +103,6 @@
   border-color: #61dafb; /* Subtle accent color for focus state */
   box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.5); /* Glow effect on focus */
 }
-
 
 input[type="number"] {
   -moz-appearance: textfield; /* Firefox */
