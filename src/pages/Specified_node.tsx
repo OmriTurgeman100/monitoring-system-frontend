@@ -176,9 +176,9 @@ export const Specified_node = () => {
                     onClick={() => handle_report_delete(report.report_id)}
                     sx={{
                       position: "absolute",
-                      bottom: "60px",
+                      bottom: "70px",
                       right: "0px",
-                      left: "165px",
+                      left: "170px",
                       color: "white",
                     }}
                   >
@@ -191,7 +191,7 @@ export const Specified_node = () => {
                       position: "absolute",
                       bottom: "30px",
                       right: "0px",
-                      left: "165px",
+                      left: "168px",
                       color: "white",
                     }}
                   >
@@ -203,7 +203,7 @@ export const Specified_node = () => {
                     sx={{
                       position: "absolute",
                       bottom: "2px",
-                      left: "165px",
+                      left: "168px",
                       color: "white",
                     }}
                   >
