@@ -26,7 +26,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    setInterval(get_time, 1000);
+    // setInterval(get_time, 1000);
 
     get_time();
   }, []);
