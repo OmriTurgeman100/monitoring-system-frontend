@@ -29,3 +29,13 @@
 .single_card_report:hover {
   transform: scale(1.05);
 }
+
+.report-time {
+  background-color: #212529;
+  width: 330px;
+  margin-top: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  color: aliceblue;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

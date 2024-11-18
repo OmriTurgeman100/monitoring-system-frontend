@@ -210,7 +210,7 @@ export const Specified_node = () => {
                     <AutoGraphIcon />
                   </Button>
                 </div>
-                <h2>{report.time}</h2>
+                <h2 className="report-time">{report.time}</h2>
               </div>
             ))}
           </div>
