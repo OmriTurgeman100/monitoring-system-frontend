@@ -26,14 +26,6 @@
   font-weight: bold;
 }
 
-.single_card_report p.reportime {
-  font-size: 18px;
-  color: #ffffff;
-  position: relative;
-  left: -10px;
-  top: -30px; 
-}
-
 .single_card_report:hover {
   transform: scale(1.05);
 }
