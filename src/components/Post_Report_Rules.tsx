@@ -45,7 +45,7 @@ export const Post_Report_Rules = () => {
     if (response.ok) {
       navigate(-1);
     } else {
-      toast.error("שגיאה, נא למלא את כל השדות");
+      toast.error("Select all fields, please.");
     }
 
     console.log(data);

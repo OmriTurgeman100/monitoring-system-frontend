@@ -74,7 +74,7 @@ export const Post_Node_Rules = () => {
     console.log(payload);
 
     if (payload.action == "" || payload.conditions.operator == "") {
-      toast.error("נא למלא את כל השדות");
+      toast.error("Select all fields, please.");
     } else {
       const response = await fetch(
         `http://localhost/api/v1/post/node/rules/${id}`,
@@ -88,7 +88,7 @@ export const Post_Node_Rules = () => {
       );
 
       if (response.ok) {
-        toast.success("החוקים נוספו בהצלחה");
+        toast.success("Rules added successfully");
 
         setTimeout(() => {
           navigate(-1);
