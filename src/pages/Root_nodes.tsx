@@ -75,7 +75,6 @@ export const Root_nodes = () => {
               <h2 className="card">{node.title}</h2>
               <h2 className="card">{node.status}</h2>
               <h2 className="card-time">{node.time}</h2>
-             
             </Link>
             <Button
               onClick={() => handle_delete_node(node.node_id)}
