@@ -54,7 +54,7 @@ export const Post_Report_Rules = () => {
 
   return (
     <div className="post_rule_container">
-      <h2 className="rule_title">הוספת חוקים</h2>
+      <h2 className="rule_title"> add rules</h2>
 
       <div className="rule_design">
         <div className="rules_menu">
@@ -91,7 +91,7 @@ export const Post_Report_Rules = () => {
           <select
             value={action}
             onChange={handleActionnChange}
-            className="custom-select"sele
+            className="custom-select"
           >
             <option value="set_parent_status_up">{"up"}</option>
             <option value="set_parent_status_down">{"down"}</option>
