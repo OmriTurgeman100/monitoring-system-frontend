@@ -11,6 +11,11 @@
   color: white;
 }
 
+.card-time {
+  color: white;
+  font-size: 17.1px;
+}
+
 .single_card_expired {
   background: linear-gradient(135deg, #6c757d, #343a40);
   padding: 15px;
@@ -20,6 +25,7 @@
   transition: transform 1s;
   position: relative;
   width: 200px;
+  overflow: hidden;
 }
 
 .single_card_up {
@@ -31,6 +37,7 @@
   height: 80px;
   transition: transform 1s;
   width: 200px;
+  overflow: hidden;
 }
 
 .single_card_down {
@@ -42,6 +49,7 @@
   height: 80px;
   transition: transform 1s;
   width: 200px;
+  overflow: hidden;
 }
 
 .single_card_critical {
@@ -53,6 +61,7 @@
   height: 80px;
   transition: transform 1s;
   width: 200px;
+  overflow: hidden;
 }
 
 .single_card_expired:hover {
