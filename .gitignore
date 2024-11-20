@@ -1,3 +1,7 @@
+__pycache__/
+constants.py
+log.log
+
 # Logs
 logs
 *.log
