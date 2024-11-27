@@ -22,7 +22,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 80px;
-  transition: transform 1s;
+  transition: transform 1s ease;
   position: relative;
   width: 200px;
   overflow: hidden;
@@ -35,7 +35,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 80px;
-  transition: transform 1s;
+  transition: transform 1s ease;
   width: 200px;
   overflow: hidden;
 }
@@ -47,7 +47,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 80px;
-  transition: transform 1s;
+  transition: transform 1s ease;
   width: 200px;
   overflow: hidden;
 }
@@ -59,7 +59,7 @@
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   height: 80px;
-  transition: transform 1s;
+  transition: transform 1s ease;
   width: 200px;
   overflow: hidden;
 }

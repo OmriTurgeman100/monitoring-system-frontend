@@ -46,7 +46,7 @@ export const Root_nodes = () => {
     );
 
     if (response.ok) {
-      toast.success("הקוביה נמחקה בהצלחה");
+      toast.success("deleted successfully");
     }
   };
 

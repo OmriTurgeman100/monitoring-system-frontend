@@ -1,0 +1,43 @@
+.report-type {
+    margin: 20px auto;
+    background-color: #343a40;
+    border-radius: 12px;
+    color: #f8f9fa;
+    font-size: 1.5rem; 
+    font-weight: 500;
+    padding: 15px 20px; 
+    width: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.report-type:hover {
+    transform: translateY(-5px); 
+    background-color: #495057; 
+}
+
+.graph-report {
+    display: flex;
+    gap: 15px;
+    margin: 20px auto;
+    background-color: #343a40;
+    border-radius: 12px;
+    color: #f8f9fa;
+    font-size: 1rem;
+    padding: 15px 20px;
+    width: max-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.graph-report:hover {
+    transform: translateY(-5px);
+    background-color: #495057;
+}
+
+.graph-report div {
+    flex: 1;
+    text-align: center;
+}
+
