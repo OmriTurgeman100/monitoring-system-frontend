@@ -3,6 +3,7 @@ import "../styles/navbar.css";
 import CircularProgress from "@mui/material/CircularProgress";
 import { useState } from "react";
 import { useEffect } from "react";
+import torch from "../assets/torch.png";
 
 type api_response = {
   time: string;
@@ -34,7 +35,9 @@ export const Navbar = () => {
   return (
     <div className="root_layout">
       <header>
-        <h2> threads </h2>
+        <h2> Torch</h2>
+        <img src={torch} alt="logo" className="logo" />
+        {/* <img src={torch} alt="logo" className="logo" /> */}
         <h2 className="israel_time">
           {loading ? <CircularProgress size={22} /> : time}
         </h2>
